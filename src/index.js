@@ -10,7 +10,7 @@ app.use(express.json());
 //req request res respuesta
 app.get("/", (req, res) => {
     return res.json({
-        msg: "Hellos World"
+        msg: "Hello World"
     });
 });
 // se pone primero las direcciones antes que los parametros, (como el siguiente GET)
@@ -19,6 +19,12 @@ app.get("/query", (req, res) => {
         nombre: req.query.nombre,
         apellido : req.query.apellido,
     });
+});
+//ejercicio a resolver
+app.get("/solucion", (req, res) => {
+    return res.json({
+        mensaje: `Hola, ${req.query.nombre} ${req.query.apellido}`
+            });
 });
 // es necesario poner : y despues el parametro que se quiere devolver
 app.get("/:id", (req, res) => {
